@@ -3,7 +3,7 @@ Type some text and an LED flashes the message in Morse code. Uses the Liberty Ar
 
 
 ## Troubleshooting
-If, when you enter some text in the webpage and press Submit, you get an error like this:
+If, when you enter some text in the webpage and press Submit, you get an error like this, it's because you have the port specified in the `server.xml` file doesn't match the port on which your Arduino is connected to your computer:
 
     Application Error
     SRVE0777E: Exception thrown by application class 'com.ibm.wasdev.arduino.impl.ArduinoAsyncImpl.findCommPort:228'
@@ -20,7 +20,7 @@ If, when you enter some text in the webpage and press Submit, you get an error l
     at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
     at [internal classes]
 
-It's because you have the wrong port specified in the `server.xml` file. To fix it:
+To fix it:
 
 1. Open the Arduino IDE and click **Tools > Serial Port** to see the port number that Arduino is connected to.
 2. In Eclipse, open the `server.xml`: In the Servers view, expand the Liberty installation and double-click **Server Configuration [server.xml]**
